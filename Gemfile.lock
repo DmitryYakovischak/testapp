@@ -124,6 +124,7 @@ GEM
       execjs (>= 0.3.0)
       json (>= 1.8.0)
     uuidtools (2.1.4)
+    validates_email_format_of (1.5.3)
 
 PLATFORMS
   ruby
@@ -140,3 +141,4 @@ DEPENDENCIES
   thin
   twitter-bootstrap-rails
   uglifier (>= 1.0.3)
+  validates_email_format_of

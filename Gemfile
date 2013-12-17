@@ -8,6 +8,7 @@ gem 'rails', '3.2.6'
 gem 'mysql2'
 gem 'pry'
 gem 'twitter-bootstrap-rails'
+gem 'validates_email_format_of'
 
 
 # Gems used only for assets and not required
