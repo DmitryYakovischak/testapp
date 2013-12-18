@@ -13,6 +13,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
-//= require jquery.ui.all
-//= require jquery.modal
+//= require lazybox
 //= require_tree .
