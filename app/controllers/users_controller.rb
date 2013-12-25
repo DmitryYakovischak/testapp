@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
+  helper_method :sort_column, :sort_direction
 
   def index
-    @users = User.all
+    @users = User.order(sort_column + " " + sort_direction)
   end
 
   def new
@@ -25,6 +26,16 @@ class UsersController < ApplicationController
   def destroy
     User.find(params[:id]).destroy
     redirect_to users_path
+  end
+
+  private
+
+  def sort_column
+  	params[:sort] || "first_name"
+  end
+
+  def sort_direction
+  	params[:direction] || "asc"
   end
 
 end
