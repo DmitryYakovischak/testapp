@@ -9,7 +9,7 @@ gem 'mysql2'
 gem 'pry'
 gem 'twitter-bootstrap-rails'
 gem 'bootstrap-sass', '2.1'
-
+gem 'jquery-rails', '>=0.2.5'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -20,15 +20,12 @@ group :assets do
   gem 'lazybox'
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
-
   gem 'uglifier', '>= 1.0.3'
 end
 
 group :development do
 	gem 'thin'
 end
-
-gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

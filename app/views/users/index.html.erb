@@ -1,24 +1,12 @@
 <h2> Test application Dmitry Yakovischak</h2>
-<table class = 'table'>
-  <thead>
-    <tr>
-      <th><%= sortable "first_name" %></th>
-      <th><%= sortable "last_name" %></th>
-      <th><%= sortable "email" %></th>
-      <th>Edit</th>
-      <th>Destroy</th>
-    </tr>
-  </thead>
-  <tbody>
-    <%- @users.each do |user| %>
-      <tr>
-        <td><%= user.first_name %></td>
-        <td><%= user.last_name %></td>
-        <td><%= user.email %></td>
-        <td><%= link_to 'Edit', edit_user_path(user), remote: true %></td>
-        <td><%= link_to 'delete', user_path(user), method: :delete,  data: { confirm: 'You sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+
+<%= form_tag users_path, :method => 'get', :id => "users_search" do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+  <div id="users"><%= render 'users' %></div>
+<% end %>
+
+
 <p><%= link_to 'Add New User', new_user_path, remote: true %></p>

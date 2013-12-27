@@ -125,7 +125,7 @@ PLATFORMS
 DEPENDENCIES
   bootstrap-sass (= 2.1)
   coffee-rails (~> 3.2.1)
-  jquery-rails
+  jquery-rails (>= 0.2.5)
   lazybox
   mysql2
   pry
