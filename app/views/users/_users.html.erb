@@ -1,7 +1,6 @@
 <%= hidden_field_tag :direction, params[:direction] %>
 <%= hidden_field_tag :sort, params[:sort] %>
-<table class = 'table'>
-  <thead>
+<table clas  <thead>
     <tr>
       <th><%= sortable "first_name" %></th>
       <th><%= sortable "last_name" %></th>
@@ -12,13 +11,7 @@
   </thead>
   <tbody>
     <%- @users.each do |user| %>
-      <tr>
-        <td><%= user.first_name %></td>
-        <td><%= user.last_name %></td>
-        <td><%= user.email %></td>
-        <td><%= link_to 'Edit', edit_user_path(user), remote: true %></td>
-        <td><%= link_to 'delete', user_path(user), method: :delete,  data: { confirm: 'You sure?' } %></td>
-      </tr>
+      <%= render :partial => "user", :locals => {:user => user} %>
     <% end %>
   </tbody>
 </table>
