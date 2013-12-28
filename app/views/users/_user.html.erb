@@ -1,7 +1,7 @@
-      <tr id = 'user_<%= user.id %>'>
-        <td><%= user.first_name %></td>
-        <td><%= user.last_name %></td>
-        <td><%= user.email %></td>
-        <td><%= link_to 'Edit', edit_user_path(user), remote: true %></td>
-        <td><%= link_to 'delete', user_path(user), method: :delete,  data: { confirm: 'You sure?' } %></td>
-      </tr>
+<tr id = 'user_<%= user.id %>'>
+  <td><%= user.first_name %></td>
+  <td><%= user.last_name %></td>
+  <td><%= user.email %></td>
+  <td><%= link_to 'Edit', edit_user_path(user), remote: true %></td>
+  <td><%= link_to 'delete', user_path(user), method: :delete,  data: { confirm: 'You sure?' } %></td>
+</tr>
