@@ -11,7 +11,11 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(params[:user])
-    render :new unless @user.save
+    if @user.save
+      redirect_to log_in_path, :notice => "Signed up!"
+    else
+      render "new"
+    end
   end
 
   def edit

@@ -12,3 +12,17 @@
  *= require_tree .
  *= require lazybox
  */
+
+.table th .current{
+	padding-right: 80px;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.table th .asc {
+	background-image: url('up_arrow.gif');
+}
+
+.table th .desc {
+	background-image: url('down_arrow.gif');
+}

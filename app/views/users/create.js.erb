@@ -1,6 +1,6 @@
 <% if @user.valid? %>
   $.lazybox.close();
-$("<%=j(render @user)%>").appendTo('#all_users');
+  $("<%=j(render @user)%>").appendTo('#all_users');
 <% else %>
   $.lazybox("<%= j(render partial: 'form') %>");
 <% end %>
