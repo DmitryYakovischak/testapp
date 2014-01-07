@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   helper_method :sort_column, :sort_direction
 
+  skip_before_filter :require_login, only: [:new, :create]
+
   def index
     @users = User.order(sort_column + " " + sort_direction)
   end
@@ -35,11 +37,11 @@ class UsersController < ApplicationController
   private
 
   def sort_column
-  	params[:sort] || "first_name"
+    params[:sort] || "first_name"
   end
 
   def sort_direction
-  	params[:direction] || "asc"
+    params[:direction] || "asc"
   end
 
 end
