@@ -14,9 +14,9 @@
  */
 
 .table th .current{
-	padding-right: 80px;
+	padding-right: 10px;
 	background-repeat: no-repeat;
-	background-position: center;
+	background-position: right;
 }
 
 .table th .asc {
