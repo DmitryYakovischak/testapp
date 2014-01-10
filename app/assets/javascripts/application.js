@@ -16,9 +16,9 @@
 //= require lazybox
 //= require_tree .
 
-$(function () {
-  $('#users').on('click', 'th a', function () {
-    $.getScript(this.href);
-    return false;
-  });
-});
+//$(function () {
+  //$('#users').on('click', 'th a', function () {
+    //$.getScript(this.href);
+    //return false;
+  //});
+//});
