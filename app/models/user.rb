@@ -6,9 +6,9 @@ class User < ActiveRecord::Base
   before_save { generate_token(:token) }
 
   validates :password, confirmation: true
-  validates_presence_of :password, :on => :create
-  validates_presence_of :email
-  validates_uniqueness_of :email
+  validates :password, :on => :create, presence: true
+  validates :email, presence: true
+  validates :email, presence: true
   validates :first_name, :last_name, presence: true
   validates :email, presence: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i }
 

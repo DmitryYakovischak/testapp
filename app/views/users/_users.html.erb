@@ -12,7 +12,7 @@
   </thead>
   <tbody>
     <%- @users.each do |user| %>
-      <%= render partial: 'user', locals: { user: user } %>
+      <div id='list_users'><%= render partial: 'user', locals: { user: user } %></div>
     <% end %>
   </tbody>
 </table>
