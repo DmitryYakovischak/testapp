@@ -2,5 +2,5 @@
 <%= form_tag users_path, method: :get, id: 'users_search' do %>
   <%= hidden_field_tag :direction, params[:direction] %>
   <%= hidden_field_tag :sort, params[:sort] %>
-  <div id='users'><%= render 'users' %></div>
+  <div id="users"><%= render 'users' %></div>
 <% end %>

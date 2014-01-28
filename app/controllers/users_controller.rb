@@ -14,6 +14,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
+      session[:user_id] = @user.id
       redirect_to users_path, :notice => "Signed up!"
     else
       render "new"
@@ -28,10 +29,17 @@ class UsersController < ApplicationController
     @user.destroy if @user
   end
 
+  def sort
+    params[:user].each_with_index do |id, index|
+      User.update_all({position: index+1}, {id: id})
+    end
+    render nothing: true
+  end
+
   private
 
   def sort_column
-    params[:sort] || "first_name"
+    params[:sort].present? ? params[:sort] : "position"
   end
 
   def sort_direction
@@ -41,5 +49,4 @@ class UsersController < ApplicationController
   def find_user
     @user = User.find(params[:id])
   end
-
 end

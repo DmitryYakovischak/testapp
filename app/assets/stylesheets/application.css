@@ -11,6 +11,7 @@
  *= require_self
  *= require_tree .
  *= require lazybox
+ *= require jquery.ui.all
  */
 
 .table th .current{

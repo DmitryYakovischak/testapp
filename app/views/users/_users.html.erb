@@ -3,6 +3,7 @@
 <table class='table' id='all_users' >
   <thead>
     <tr>
+      <th><%= sortable 'position' %></th>
       <th><%= sortable 'first_name' %></th>
       <th><%= sortable 'last_name' %></th>
       <th><%= sortable 'email' %></th>
@@ -10,7 +11,7 @@
       <th>Destroy</th>
     </tr>
   </thead>
-  <tbody>
+  <tbody id="sort_users" data-update-url="<%= sort_users_url %>">
     <%- @users.each do |user| %>
       <div id='list_users'><%= render partial: 'user', locals: { user: user } %></div>
     <% end %>
