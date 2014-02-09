@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   helper_method :sort_column, :sort_direction
-  before_filter :get_users, only: [:index, :sort, :destroy]
+  before_filter :get_users, only: [:index, :sort, :destroy, :show]
   before_filter :find_user, only: [:edit, :update, :destroy]
   skip_before_filter :require_login, only: [:index, :new, :create]
 
@@ -19,6 +19,8 @@ class UsersController < ApplicationController
       render "new"
     end
   end
+
+  def show; end
 
   def update
     render :edit unless @user.update_attributes(params[:user])

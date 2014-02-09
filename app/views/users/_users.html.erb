@@ -13,7 +13,7 @@
   </thead>
   <tbody id="sort_users" data-update-url="<%= sort_users_url %>">
     <%- @users.each do |user| %>
-      <div id='list_users'><%= render partial: 'user', locals: { user: user } %></div>
+      <div><%= render partial: 'user', locals: { user: user } %></div>
     <% end %>
   </tbody>
 </table>
