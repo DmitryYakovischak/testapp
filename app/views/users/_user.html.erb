@@ -5,6 +5,6 @@
   <td><%= user.email %></td>
   <td><%= link_to 'Edit', edit_user_path(user), remote: true %></td>
   <td><%- unless current_user == user %>
-    <%= link_to 'delete', user_path(user), method: :delete,  data: { confirm: 'You sure?' } %>
+    <%= link_to 'delete', user_path(user), remote: true, method: :delete,  data: { confirm: 'You sure?' } %>
   	<% end %></td>
 <% end %>
