@@ -1,11 +1,10 @@
 class UsersController < ApplicationController
   helper_method :sort_column, :sort_direction
+  before_filter :get_users, only: [:index, :sort, :destroy]
   before_filter :find_user, only: [:edit, :update, :destroy]
   skip_before_filter :require_login, only: [:index, :new, :create]
 
-  def index
-    @users = User.order("#{sort_column} #{sort_direction}")
-  end
+  def index; end
 
   def new
     @user = User.new
@@ -26,14 +25,13 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user.destroy if @user
+    @user.destroy
   end
 
   def sort
     params[:user].each_with_index do |id, index|
       User.update_all({position: index+1}, {id: id})
     end
-    render nothing: true
   end
 
   private
@@ -48,5 +46,9 @@ class UsersController < ApplicationController
 
   def find_user
     @user = User.find(params[:id])
+  end
+
+  def get_users
+    @users = User.order("#{sort_column} #{sort_direction}")
   end
 end
